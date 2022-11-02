@@ -1,0 +1,256 @@
+:root {
+    --white-color: #FFFFFF;
+    --blue-color: #0D28A6;
+    --grey-color: #8A8A8A;
+    --grey-color-light: #CFD4ED;
+    --bluegrey-color: #aeb7e1;
+}
+
+.green-4 {
+    background-color: #5CB85F;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 150%;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn-white {
+    background-color: var(--white-color);
+    color: var(--blue-color);
+    border-color: var(--blue-color);
+    border-radius: 2px;
+    border: solid 2px;
+}
+
+.btn-blue {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    border-radius: 2px;
+}
+
+/* btn searc */
+.btn-large {
+    height: 36px;
+    width: 70px;
+    font-size: 14px;
+}
+
+/* btn modal */
+.btn-medium {
+    width: 87px;
+    height: 36px;
+    font-size: 14px;
+}
+
+/* btn update create */
+.btn-small {
+    width: 69px;
+    height: 36px;
+    font-size: 14px;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+    background-color: var(--white-color);
+    height: 70px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+}
+
+.input-search {
+    background-color: var(--white-color);
+    border-radius: 3px;
+    height: 36px;
+    width: 11rem;
+    border: solid 2px #D0D0D0;
+    font-size: 14px;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar-color {
+    background-color: var(--blue-color);
+    width: 80px;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background-color: var(--white-color);
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.sidebar.close {
+    width: 80px;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    z-index: 4;
+}
+
+.image-text .text-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .toggle {
+    position: absolute;
+    top: 50%;
+    right: -70px;
+    /* Membuat icon keluar sidebar */
+    transform: translateY(-50%);
+}
+
+.sidebar li {
+    height: 70px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 42px;
+}
+
+.sidebar li a {
+    color: var(--grey-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li:hover {
+    background-color: var(--grey-color-light);
+}
+
+.sidebar li span:hover {
+    color: black;
+}
+
+.sidebar.close li a span {
+    display: none;
+}
+
+.sidebar.close .img-brand {
+    display: none;
+}
+
+.sidebar li img {
+    width: 85px;
+    z-index: 4;
+    padding-right: 35px;
+}
+
+/* ==== Main ==== */
+.main {
+    padding-left: 300px;
+    padding-right: 50px;
+    padding-top: 70px;
+}
+
+.main.close {
+    padding-left: 100px;
+}
+
+.rule {
+    font-size: 12px;
+}
+
+.rule a {
+    color: black;
+    text-decoration: none;
+}
+
+.btn-filter-size {
+    border-radius: 3px;
+    color: var(--bluegrey-color);
+    border-color: var(--bluegrey-color);
+}
+
+.btn-filter-size:hover {
+    color: var(--blue-color);
+    border-color: var(--blue-color);
+    background-color: var(--grey-color-light);
+}
+
+.active-filter {
+    color: var(--blue-color) !important;
+    border-color: var(--blue-color) !important;
+    background-color: var(--grey-color-light);
+}
+
+.btn-card {
+    width: 100px;
+    height: 38px;
+}
+
+/* ==== New Data ==== */
+.create-form span {
+    color: red;
+}
+
+.create-form label,
+.create-form input,
+.create-form select {
+    font-size: 12px;
+}
+
+.create-form p {
+    color: var(--grey-color-light);
+    font-size: 10px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.modal-body img {
+    width: 153px;
+    height: 121px;
+    right: 0;
+    left: 0;
+}

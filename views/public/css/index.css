@@ -1,0 +1,280 @@
+:root{
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #E5E5E5;
+}
+
+.col-9{
+    margin-inline-start: -4.5em;
+}
+
+/* Navbar */
+
+.navbar-custom .logo-menu{
+    margin-left: 5em;
+    border: none;
+}
+
+.navbar-custom .btn{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0D28A6;
+}
+
+.nav-item.dropdown-center {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin-inline-end: 2.8em;
+}
+
+/* Sidebar */
+.side-bar{
+    position: fixed;
+    background-color: #0D28A6;
+    width: 70px;
+    height: 902px;
+    padding: 0 0;
+}
+
+.logo-sidebar{
+    margin: 0.55em 1.1em 1.1em 1.1em;
+}
+
+.side-bar button{
+    background-color: #0D28A6;
+    border-style: none;
+}
+
+button.active-sidebar{
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 70px;
+    padding-top: 10px;
+}
+
+.side-bar button img{
+    width: 24px;
+    height: 24px;
+    margin: 0.2em 1em 0.3em 1em;
+}
+
+.side-bar button p{
+    color: white;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+
+/* Sidebar 2 */
+
+.side-bar2{
+    position: fixed;
+    background-color: white;
+    height: 902px;
+    margin-inline-start: -3.2em;
+    padding: 0 0;
+    width: 11em;
+}
+
+.side-bar2 button{
+    background-color: white;
+    border-style: none;
+}
+
+button.nonactive-sidebar2{
+    margin-inline-start: 0.2em;
+}
+
+button.active-sidebar2{
+    background-color: #CFD4ED;
+    width: 11em;
+    padding-top: 10px;
+    margin-top: -80px;
+}
+
+.side-bar2 button p#cars{
+    color: #8A8A8A;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    flex: none;
+    margin-top: 3.2em;
+    margin-bottom: 2em;
+}
+
+.side-bar2 button p#list{
+    color: #151515;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    flex: none;
+    margin-left: -5.3em;
+}
+
+/* Content */
+.content{
+    padding-top: 3em;
+    margin-inline-start: 3em;
+}
+
+.content .breadcrumb a{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.content .breadcrumb li{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222222;
+}
+
+.content .list-custom .col-10{
+    margin-top: -15px;
+}
+
+.content .list-custom .col-2{
+    margin-top: 3px;
+}
+
+.content .list-custom .col-2 a{
+    width: 150px;
+    margin-top: 0.5em;
+    background-color: #0D28A6;
+}
+
+.content h3{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 1.3em;
+}
+
+.content button.btn-active{
+    border: 1px solid #0D28A6;
+    color: #0D28A6;
+    background-color: #AEB7E1;
+    border-radius: 0;
+    margin-top: 0.8em;
+}
+
+.content button.btn-active p{
+    font-family: 'IBM Plex Sans';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0D28A6;
+    text-align: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.content button{
+    border: 1px solid #AEB7E1;
+    background-color: white;
+    border-radius: 0;
+    margin-top: 0.8em;
+}
+.content button p{
+    font-family: 'IBM Plex Sans';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #AEB7E1;
+    text-align: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Delete Confirmation */
+
+#delete-confirmation{
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 10px grey;
+    margin: 0 auto;
+    align-content: center;
+}
+
+#delete-confirmation .card{
+    padding: 10px;
+    align-content: center;
+}
+
+#delete-confirmation .card img{
+    margin-inline-start: 5em;
+}
+
+/* List Cars */
+
+#list-cars{
+    margin-inline-start: 2.1em;
+}
+
+/* Add Content Form */
+
+.card-custom .card{
+    padding: 20px;
+    width: 62.5em;
+}
+
+.card-custom .card label{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.card-custom .card .form-control{
+    width: 23em;
+}
+
+.card-custom .card label span{
+    color: red;
+}
+
+.card-custom .card p{
+    margin-inline-start: 14em;
+    color: #8A8A8A;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 5px;
+}
+
+.card-custom .submit-form{
+    margin-top: 11em;
+    margin-left: -0.5em;
+}
+

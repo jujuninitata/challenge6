@@ -1,0 +1,607 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Rent Car - OpenAPI 3.0",
+        "description": "Rent Car API Documentation",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "apiteam@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.11"
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Authentication",
+            "description": "Authentication Specs"
+        },
+        {
+            "name": "Car",
+            "description": "Everything about Cars"
+        }
+    ],
+    "paths": {
+        "/auth/login": {
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "Login as Member",
+                "description": "Login as Member",
+                "operationId": "loginMember",
+                "requestBody": {
+                    "description": "Login as Member",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Motor"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },"/auth/register": {
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "Register Member",
+                "description": "Register Member",
+                "operationId": "registerMember",
+                "requestBody": {
+                    "description": "Register Member",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Register"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RegisterResponse"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        
+        "/auth/register-admin": {
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "Register Admin",
+                "description": "Register Admin",
+                "operationId": "registerAdmin",
+                "requestBody": {
+                    "description": "Register Admin",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Register"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RegisterResponse"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/auth/login-superadmin": {
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "Login as Superadmin",
+                "description": "Login as Superadmin",
+                "operationId": "loginSuperadmin",
+                "requestBody": {
+                    "description": "Login as Superadmin",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/auth/login-admin": {
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "Login as Admin",
+                "description": "Login as Admin",
+                "operationId": "loginAdmin",
+                "requestBody": {
+                    "description": "Login as Admin",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/cars": {
+            "get": {
+                "tags": ["Car"],
+                "summary": "Get all Cars",
+                "description": "Get all data Cars",
+                "operationId": "getCar",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Car not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Car"],
+                "summary": "Add a new Car to database",
+                "description": "Add a new Car to database",
+                "operationId": "addCar",
+                "requestBody": {
+                    "description": "Add a new Car to database",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CarRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarResponse"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/cars/{id}": {
+            "get": {
+                "tags": ["Car"],
+                "summary": "Find Car by ID",
+                "description": "Returns a single Car",
+                "operationId": "getCarById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Car to return",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Car not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Car"],
+                "summary": "Updates a Car in the database with form data",
+                "description": "",
+                "operationId": "updateCarWithForm",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Car that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update Car to database",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CarRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarResponse"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Car"],
+                "summary": "Deletes a Car",
+                "description": "delete a Car",
+                "operationId": "deleteCar",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Car that needs to be deleted",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid pet value"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Login": {
+                "required": ["email", "password"],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "example": "aceng@gmail.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "123456"
+                    }
+                }
+            },
+            "Register": {
+                "required": ["name", "email", "password"],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Test"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "test@gmail.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "123456"
+                    }
+                }
+            },
+            "RegisterResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Register Success"
+                    },
+                    "data": {
+                        "type": "object",
+                        "items": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 10
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Test"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "test@gmail.com"
+                    },
+                    "role": {
+                        "type": "string",
+                        "example": "admin"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "example": "2022-10-20T00:00:00.000Z"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "example": "2022-10-20T00:00:00.000Z"
+                    }
+                }
+            },
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Login Success"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "aceng@gmail.com"
+                    },
+                    "role": {
+                        "type": "string",
+                        "example": "admin"
+                    },
+                    "token": {
+                        "type": "string",
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmYXJoYW5tdWJhcm9rMTA0QGdtYWlsLmNvbSIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNjY2NDkxOTk1LCJleHAiOjE2NjY0OTU1OTV9.xxAyyA6ATZm1dDsBahYOPn4zmEtszetOAwYwrRzqA90"
+                    }
+                }
+            },
+            "Car": {
+                "required": ["name", "size", "price", "photo"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 10
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Beat"
+                    },
+                    "size": {
+                        "type": "string",
+                        "example": "Honda"
+                    },
+                    "price": {
+                        "type": "number",
+                        "example": 50000
+                    },
+                    "photo": {
+                        "type": "string",
+                        "example": "http://cloudinary"
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "example": "admin"
+                    },
+                    "updatedBy": {
+                        "type": "string",
+                        "example": "admin"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "example": "2022-10-20T00:00:00.000Z"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "example": "2022-10-20T00:00:00.000Z"
+                    }
+                }
+            },
+            "CarRequest": {
+                "required": ["name", "size", "price", "photo"],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Beat"
+                    },
+                    "size": {
+                        "type": "string",
+                        "example": "Honda"
+                    },
+                    "price": {
+                        "type": "number",
+                        "example": 50000
+                    },
+                    "photo": {
+                        "type": "string",
+                        "example": "http://cloudinary"
+                    }
+                }
+            },
+            "CarResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Success"
+                    },
+                    "data": {
+                        "type": "object",
+                        "items": {
+                            "$ref": "#/components/schemas/Car"
+                        }
+                    }
+                }
+            },
+            "ApiResponse": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "requestBodies": {
+            "Motor": {
+                "description": "Pet object that needs to be added to the store",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Motor"
+                        }
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
